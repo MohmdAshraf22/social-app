@@ -7,6 +7,7 @@ class NewsGetBusinessLoadingState extends NewsStates {}
 class NewsGetBusinessErrorState extends NewsStates {
   late final String error;
   NewsGetBusinessErrorState(this.error);
+
 }
 
 class NewsGetScienceLoadingState extends NewsStates {}

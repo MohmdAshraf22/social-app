@@ -44,6 +44,7 @@ class news extends Cubit<NewsStates>
       isDark = !isDark;
     CacheHelper.putData(key: 'isDark', value: isDark).then((value) {
       emit(ChangeModeState());
+
     });
     }
   }

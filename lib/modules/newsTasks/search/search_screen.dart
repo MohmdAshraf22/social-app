@@ -6,7 +6,7 @@ import 'package:myapp/layout/newsApp/cubit/states.dart';
 import 'package:myapp/shared/components/components.dart';
 
 class SearchScreen extends StatelessWidget {
-  var search = TextEditingController();
+   var search = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

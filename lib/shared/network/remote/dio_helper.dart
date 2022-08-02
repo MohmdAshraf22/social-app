@@ -22,6 +22,7 @@ class DioHelper{
      //   contentType: Headers.jsonContentType,
      //   responseType:ResponseType.json,
      // )
+
    );
   }
 }

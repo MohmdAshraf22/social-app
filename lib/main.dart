@@ -46,6 +46,7 @@ class MyApp extends StatelessWidget
       child: BlocConsumer<news,NewsStates>(
         listener: (context, state) {
         },
+
         builder:(context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
