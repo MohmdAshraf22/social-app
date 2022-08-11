@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:myapp/layout/newsApp/cubit/cubit.dart';
 import 'package:myapp/layout/newsApp/cubit/states.dart';
-import 'package:myapp/modules/newsTasks/search/search_screen.dart';
+import 'package:myapp/modules/news_app/search/search_screen.dart';
 import 'package:myapp/shared/components/components.dart';
 import 'package:myapp/shared/network/remote/dio_helper.dart';
 

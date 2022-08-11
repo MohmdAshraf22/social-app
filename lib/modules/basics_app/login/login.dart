@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -23,97 +22,6 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         backgroundColor: Colors.purple,
       ),
-      // body: Padding(
-      //   padding: const EdgeInsets.all(20.0),
-      //   child: Center(
-      //     child: SingleChildScrollView(
-      //       child: Column(
-      //         crossAxisAlignment: CrossAxisAlignment.start,
-      //         mainAxisAlignment: MainAxisAlignment.center,
-      //         children: [
-      //           Text('Login',
-      //           style: TextStyle(
-      //             fontWeight: FontWeight.bold,
-      //             fontSize: 50,
-      //
-      //           ),),
-      //           SizedBox(height: 40,),
-      //           TextFormField(
-      //             controller: email,
-      //             keyboardType: TextInputType.emailAddress,
-      //             onFieldSubmitted: (v){
-      //               print(v);
-      //             },
-      //             onChanged: (v){
-      //               print(v);
-      //             },
-      //           decoration: InputDecoration(
-      //             border: OutlineInputBorder(),
-      //               labelText: 'Enter Email',
-      //             prefixIcon: Icon(
-      //               Icons.email,
-      //             ),
-      //
-      //           ),
-      //           ),
-      //           SizedBox(height: 10,),
-      //           TextFormField(
-      //
-      //             controller: pass,
-      //             keyboardType: TextInputType.visiblePassword,
-      //             obscureText: true,
-      //             onFieldSubmitted: (v){
-      //               print(v);
-      //             },
-      //             onChanged: (v){
-      //               print(v);
-      //             },
-      //             decoration: InputDecoration(
-      //               border: OutlineInputBorder(),
-      //               labelText: 'Enter Password',
-      //               prefixIcon: Icon(
-      //                 Icons.lock,
-      //               ),
-      //               suffixIcon: Icon(
-      //                 Icons.remove_red_eye_sharp
-      //               ),
-      //
-      //             ),
-      //           ),
-      //           SizedBox(height: 20,),
-      //           Container(
-      //            color: Colors.blue,
-      //            width: double.infinity,
-      //            height: 40,
-      //            child: MaterialButton(onPressed: (){
-      //              print(pass.text);
-      //              print(email.text);
-      //            },
-      //              child : Text('LOGIN',
-      //              style: TextStyle(
-      //                color: Colors.white,
-      //              ),)
-      //            ),
-      //          ),
-      //           SizedBox(height: 20,),
-      //           Row(
-      //             mainAxisAlignment: MainAxisAlignment.center,
-      //             children: [
-      //               Text('Don\'t have an account ?'
-      //               , style: TextStyle(
-      //                   fontWeight: FontWeight.w700,
-      //                   fontSize: 15,
-      //                 ),),
-      //             TextButton(onPressed: (){},
-      //             child: Text('Register Now'),
-      //             ),
-      //             ],
-      //           )
-      //         ],
-      //       ),
-      //     ),
-      //   ),
-      // )
       body : Padding(
         padding: const EdgeInsets.all(20.6),
         child: Form(

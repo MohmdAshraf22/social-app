@@ -2,10 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/layout/newsApp/cubit/states.dart';
-import 'package:myapp/modules/newsTasks/business/business_screen.dart';
-import 'package:myapp/modules/newsTasks/science/science_screen.dart';
-import 'package:myapp/modules/newsTasks/sports/sports_screen.dart';
-import 'package:myapp/modules/setting/settings.dart';
+import 'package:myapp/modules/news_app/business/business_screen.dart';
+import 'package:myapp/modules/news_app/science/science_screen.dart';
+import 'package:myapp/modules/news_app/sports/sports_screen.dart';
 import 'package:myapp/shared/network/local/cache_helper.dart';
 import 'package:myapp/shared/network/remote/dio_helper.dart';
 
@@ -53,7 +52,7 @@ class news extends Cubit<NewsStates>
    getBusiness(){
      emit(NewsGetBusinessLoadingState());
      DioHelper.getData(
-       path: 'v2/top-headlines',
+       path:   'v2/top-headlines',
        query: {
          'country':'eg',
          'category':'business',

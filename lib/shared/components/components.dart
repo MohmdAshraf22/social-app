@@ -1,7 +1,8 @@
+import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/modules/web_view/web_view.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:myapp/modules/news_app/web_view/web_view.dart';
 import 'package:myapp/shared/bloc/cubit.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 Widget defaultformfield({
   required TextEditingController controle ,
@@ -11,7 +12,7 @@ Widget defaultformfield({
   required IconData prefix,
   IconData? suffix,
   VoidCallback? onpress,
-  required FormFieldValidator validate,
+  FormFieldValidator? validate,
   GestureTapCallback? ontap,
   bool isClickable = true,
   Color? cursorcolor,
@@ -255,16 +256,16 @@ Widget myDivider() => Padding(
   ),
 );
 
-// Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
-//   condition: list.length > 0,
-//   builder: (context) =>
-//       ListView.separated(
-//         physics: BouncingScrollPhysics(),
-//         itemBuilder: (context, index) => buildArticleItem(list[index], context),
-//         separatorBuilder: (context, index) => myDivider(),
-//         itemCount: 10,),
-//   fallback: (context) => isSearch ? Container() : Center(child: CircularProgressIndicator()),
-// );
+Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
+  condition: list.length > 0,
+  builder: (context) =>
+      ListView.separated(
+        physics: BouncingScrollPhysics(),
+        itemBuilder: (context, index) => BuildArticleItem(list[index], context),
+        separatorBuilder: (context, index) => myDivider(),
+        itemCount: 10,),
+  fallback: (context) => isSearch ? Container() : Center(child: CircularProgressIndicator()),
+);
 
 navigateTo(context , widget) => Navigator.push(
   context,
@@ -272,5 +273,50 @@ navigateTo(context , widget) => Navigator.push(
     builder: (context) => widget,
   ),
 );
+navigateAndFinish(context , widget) => Navigator.pushAndRemoveUntil(
+    context, MaterialPageRoute(
+  builder: (context) => widget,
+), (route) => false
+);
+
+void showToast({
+  required String text ,
+  required ToastColor state ,
+
+}) =>  Fluttertoast.showToast(
+  msg: text,
+  toastLength: Toast.LENGTH_SHORT,
+  gravity: ToastGravity.BOTTOM,
+  timeInSecForIosWeb: 5,
+  backgroundColor: ChangeToastColor(state),
+  textColor: Colors.white,
+  fontSize: 16.0,
+);
+
+enum ToastColor {SUCCESS,ERROR,WARNING}
+Color ChangeToastColor(ToastColor state)
+{
+  Color color;
+  switch(state){
+    case ToastColor.SUCCESS:
+    color = Colors.green;
+    break;
+    case ToastColor.ERROR:
+      color = Colors.red;
+      break;
+    case ToastColor.WARNING:
+      color = Colors.amber;
+      break;
+  }
+  return color;
+}
+
+
+void printFullText(String text)
+{
+  final pattern = RegExp('.{1,800}');
+  pattern.allMatches(text).forEach((match) => print(match.group(0)));
+}
+
 
 
