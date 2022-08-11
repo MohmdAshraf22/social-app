@@ -35,3 +35,18 @@ class ShopSuccessUpdateProfile extends ShopStates{
 }
 class ShopErrorUpdateProfile extends ShopStates{}
 class ShopLoadingUpdateProfile extends ShopStates{}
+
+class ChangePassLoginState extends ShopStates{}
+class LoadingLoginState extends ShopStates{}
+class SuccessLoginState extends ShopStates{
+  late final ShopLoginModel loginModel;
+  SuccessLoginState(this.loginModel);
+}
+class ErrorLoginState extends ShopStates{
+  late final String error;
+  ErrorLoginState(this.error);
+}
+
+class ShopSuccessGetProductDetails extends ShopStates{}
+class ShopErrorGetProductDetails extends ShopStates{}
+class ShopLoadingGetProductDetails extends ShopStates{}

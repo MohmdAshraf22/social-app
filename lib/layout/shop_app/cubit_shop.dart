@@ -1,4 +1,5 @@
 
+import 'package:myapp/models/shop_app/details_product.dart';
 import 'package:myapp/models/shop_app/login_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -75,15 +76,9 @@ class CubitShop extends Cubit<ShopStates> {
   }
 
   void postFavouriteModel(int idFav) {
-    if (favourite![idFav] == false) {
+    favourite![idFav] = !favourite![idFav]!;
+    emit(ShopChangeFavouritesModel());
 
-      favourite![idFav] = true;
-      emit(ShopChangeFavouritesModel());
-    }
-    else {
-      favourite![idFav] = false;
-      emit(ShopChangeFavouritesModel());
-    }
 
       DioHelper.postData(
         path: FAVOURITES,
@@ -95,23 +90,13 @@ class CubitShop extends Cubit<ShopStates> {
       ).then((value) {
         addFavourites = AddFavourites.fromJson(value.data);
         if(!addFavourites!.status){
-          if (favourite![idFav] == false) {
-            favourite![idFav] = true;
-          }
-          else {
-            favourite![idFav] = false;
-          }
+          favourite![idFav] = !favourite![idFav]!;
         }
         else getFavourite();
         emit(ShopSuccessFavouritesModel(addFavourites));
       }).catchError((error) {
         if(!addFavourites!.status ){
-          if (favourite![idFav] == false) {
-            favourite![idFav] = true;
-          }
-          else {
-            favourite![idFav] = false;
-          }
+          favourite![idFav] = !favourite![idFav]!;
         }
         emit(ShopErrorFavouritesModel());
       });
@@ -131,7 +116,7 @@ class CubitShop extends Cubit<ShopStates> {
     });
   }
 
-  ShopProfileModel? userProfile;
+  ShopLoginModel? userProfile;
 
   void getProfile()
   {
@@ -139,7 +124,7 @@ class CubitShop extends Cubit<ShopStates> {
       path: PROFILE,
       token: token,
     ).then((value) {
-      userProfile = ShopProfileModel.fromJson(value.data);
+      userProfile = ShopLoginModel.fromJson(value.data);
 
       emit(ShopSuccessGetProfile());
     }).catchError((error){
@@ -164,7 +149,7 @@ class CubitShop extends Cubit<ShopStates> {
         'email':email,
       },
     ).then((value) {
-      userProfile = ShopProfileModel.fromJson(value.data);
+      userProfile = ShopLoginModel.fromJson(value.data);
 
       emit(ShopSuccessUpdateProfile());
     }).catchError((error){
@@ -172,6 +157,58 @@ class CubitShop extends Cubit<ShopStates> {
       emit(ShopErrorUpdateProfile());
     });
   }
+
+  bool ispass = true;
+  IconData icon = Icons.visibility;
+
+  void changePass() {
+    if (ispass == false) {
+      ispass = true;
+      icon = Icons.visibility;
+    }
+    else {
+      ispass = false;
+      icon = Icons.visibility_off;
+    }
+    emit(ChangePassLoginState());
+  }
+
+  void userLogin({
+  required String email,
+  required String password,
+})
+  {
+    emit(LoadingLoginState());
+    DioHelper.postData(
+        path: LOGIN,
+        data: {
+          'email': email,
+          'password': password,
+        }).then((value) {
+      userProfile = ShopLoginModel.fromJson(value.data);
+
+          emit(SuccessLoginState(userProfile!));
+    }).catchError((error){
+      emit(ErrorLoginState(error.toString()));
+      print('error is ${error.toString()}');
+    });
+  }
+
+  GetDetailsProduct? getDetailsProduct;
+  Details? details;
+  void DetailsProduct(){
+    emit(ShopLoadingGetProductDetails());
+    DioHelper.getData(
+        path: PRODUCT_DETAILS,
+    ).then((value) {
+      getDetailsProduct = GetDetailsProduct.fromJson(value.data);
+      emit(ShopSuccessGetProductDetails());
+    }).catchError((error){
+      print(error.toString());
+      emit(ShopErrorGetProductDetails());
+    });
+  }
+
 
 
 

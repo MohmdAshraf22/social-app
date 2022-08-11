@@ -7,6 +7,7 @@ import 'package:myapp/layout/shop_app/states_shop.dart';
 import 'package:myapp/layout/todoApp/todo_layout.dart';
 import 'package:myapp/models/shop_app/categories_model.dart';
 import 'package:myapp/models/shop_app/home_model.dart';
+import 'package:myapp/modules/shop_app/details_product_screen/details_screen.dart';
 import 'package:myapp/shared/components/components.dart';
 import 'package:myapp/shared/styles/colors.dart';
 
@@ -214,9 +215,11 @@ class ProductScreen extends StatelessWidget {
                 width: double.infinity,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 child: ElevatedButton.icon(
-                    onPressed: (){},
+                    onPressed: (){
+                      navigateTo(context, DetailsScreen());
+                    },
                     icon: Icon(Icons.add),
-                    label: Text('Add to cart'),
+                    label: Text('Show Product'),
                 ),
               )
             ],

@@ -37,10 +37,10 @@ class ShopRegister extends StatelessWidget {
                   key: 'token',
                   value: state.loginModel.data!.token
               ).then((value) {
-                //token = state.loginModel.data!.token;
+                token = state.loginModel.data!.token;
                 showToast(
                   state: ToastColor.SUCCESS,
-                  text: state.loginModel.message,
+                  text: state.loginModel.message.toString(),
                 );
                 navigateAndFinish(context, ShopLayout());
               });
@@ -49,7 +49,7 @@ class ShopRegister extends StatelessWidget {
             {
               showToast(
                 state: ToastColor.ERROR,
-                text: state.loginModel.message,
+                text: state.loginModel.message.toString(),
               );
             }
           }
