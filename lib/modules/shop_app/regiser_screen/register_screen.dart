@@ -32,6 +32,7 @@ class ShopRegister extends StatelessWidget {
           {
             if(state.loginModel.status)
             {
+              //
               CacheHelper.saveData(
                   key: 'token',
                   value: state.loginModel.data!.token

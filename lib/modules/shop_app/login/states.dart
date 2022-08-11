@@ -8,7 +8,7 @@ class SuccessState extends LoginStates{
  late final ShopLoginModel loginModel;
  SuccessState(this.loginModel);
 }
-class ErrorState extends LoginStates{
+class ErrorState extends LoginStates{//
  late final String error;
  ErrorState(this.error);
 }

@@ -32,7 +32,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
       image: 'assets/images/SM.jpg',
       title: 'on Board 1 Title',
       body: 'on Board 1 Body',
-    ),
+    ),//
     BoardingModel(
       image: 'assets/images/SM.jpg',
       title: 'on Board 2 Title',

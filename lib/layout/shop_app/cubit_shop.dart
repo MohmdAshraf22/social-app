@@ -21,7 +21,7 @@ import 'package:myapp/shared/network/remote/dio_helper.dart';
 
 class CubitShop extends Cubit<ShopStates> {
   CubitShop() : super(InitialState());
-
+//
   static CubitShop get(context) => BlocProvider.of(context);
 
   int current = 0;

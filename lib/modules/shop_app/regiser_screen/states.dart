@@ -11,4 +11,4 @@ class SuccessRegisterState extends RegisterStates{
 class ErrorRegisterState extends RegisterStates{
  late final String error;
  ErrorRegisterState(this.error);
-}
+}//

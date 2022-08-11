@@ -9,7 +9,7 @@ class GetFavouriteModel {
     message = json['message'];
     data = json['data'] != null ?  Data.fromJson(json['data']) : null;
   }
-
+////
 }
 
 class Data {

@@ -28,7 +28,7 @@ class ShopCubitRegister extends Cubit<RegisterStates>
     }
     emit(ChangePassRegisterState());
   }
-
+ //
   void userRegister({
   required String email,
   required String password,

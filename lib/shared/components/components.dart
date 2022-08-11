@@ -18,7 +18,7 @@ Widget defaultformfield({
   Color? cursorcolor,
   ValueChanged<String>? onChange,
 }) => TextFormField(
-  cursorColor: cursorcolor,
+  cursorColor: cursorcolor,//
   enabled: isClickable,
   onTap: ontap,
 validator: validate,

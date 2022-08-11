@@ -10,7 +10,7 @@ class HomeModel
  {
    status = json['status'];
    data =  DataShop.fromJson(json['data']);
- }
+ }////
 }
 
 class DataShop

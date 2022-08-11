@@ -7,4 +7,4 @@ class AddFavourites
     status = json['status'];
     message = json['message'];
   }
-}
+}//
