@@ -19,7 +19,7 @@ class CategoriesScreen extends StatelessWidget {
           builder: (context) => buildCategory(CubitShop.get(context).categoriesModel),
           fallback: (context) => Center(child: CircularProgressIndicator()),
         );;
-      },//
+      },
     );
   }
   Widget buildCategory(CategoriesModel? model) => Padding(

@@ -13,7 +13,7 @@ class FavouriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<CubitShop,ShopStates>(
       listener: (context, state) {
-//
+
       },
       builder: (context, state) {
         return ConditionalBuilder(

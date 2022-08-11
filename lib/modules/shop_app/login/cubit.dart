@@ -12,7 +12,7 @@ class ShopCubitLogin extends Cubit<LoginStates>
 
   static ShopCubitLogin get(context) => BlocProvider.of(context);
   ShopLoginModel? loginModel;
-//
+
   bool ispass = true;
   IconData icon = Icons.visibility;
 

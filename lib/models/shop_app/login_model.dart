@@ -10,7 +10,7 @@ class ShopLoginModel
     data = json['data'] != null ? UserData.fromJson(json['data']) : null;
   }
 }
-//
+
 class UserData
 {
   late int id;

@@ -9,7 +9,7 @@ class CategoriesModel
   }
 }
 class CategoriesData
-{////
+{
   late int current_page;
   late List<DataModel> datamodel = [];
 

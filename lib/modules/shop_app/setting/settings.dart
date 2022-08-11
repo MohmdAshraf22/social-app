@@ -17,7 +17,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<CubitShop,ShopStates>(
       listener: (context, state) {
-      },//
+      },
       builder:(context, state) {
         var model = CubitShop.get(context).userProfile;
         nameCtrl.text = model!.data!.name;

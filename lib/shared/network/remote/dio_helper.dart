@@ -57,7 +57,7 @@ class DioHelper{
     Map<String, dynamic>? query,
     required Map<String, dynamic>? data,
     String lang = 'en',
-    String? token,//
+    String? token,
 
   }) async
   {
