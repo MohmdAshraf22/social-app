@@ -1,8 +1,11 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:myapp/layout/shop_app/cubit_shop.dart';
+import 'package:myapp/models/shop_app/get_fav_model.dart';
 import 'package:myapp/modules/news_app/web_view/web_view.dart';
 import 'package:myapp/shared/bloc/cubit.dart';
+import 'package:myapp/shared/styles/colors.dart';
 
 Widget defaultformfield({
   required TextEditingController controle ,
@@ -15,9 +18,11 @@ Widget defaultformfield({
   FormFieldValidator? validate,
   GestureTapCallback? ontap,
   bool isClickable = true,
+  ValueChanged<String>? onSubmit,
   Color? cursorcolor,
   ValueChanged<String>? onChange,
 }) => TextFormField(
+  onFieldSubmitted: onSubmit,
   cursorColor: cursorcolor,
   enabled: isClickable,
   onTap: ontap,
@@ -317,6 +322,99 @@ void printFullText(String text)
   final pattern = RegExp('.{1,800}');
   pattern.allMatches(text).forEach((match) => print(match.group(0)));
 }
+
+Widget buildListProduct(model,context,{bool? isOldPrice = true}) => Padding(
+  padding:  EdgeInsets.all(20.0),
+  child: Row(
+    children: [
+      Stack(
+        alignment: AlignmentDirectional.bottomStart,
+        children: [
+          Card(
+            elevation: 10,
+            child: Image(
+              image: NetworkImage('${model!.image}'),
+              height: 120,
+              width: 120,
+            ),
+          ),
+          if(model!.discount != 0 && isOldPrice! )
+            Container(
+              width: 60,
+              color: Colors.red,
+              child: Text('DISCOUNT'
+                ,style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                ),
+              ),
+            ),
+        ],
+      ),
+      SizedBox(
+        width: 10,
+      ),
+      Expanded(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('${model!.name}',
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            Row(
+              children: [
+                Text('${model!.price}',
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.green
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                if(model!.discount != 0 && isOldPrice!)
+                  Text('${model!.oldPrice}',
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black54,
+                      decoration: TextDecoration.lineThrough,
+                    ),
+                  ),
+                Spacer(),
+                IconButton(
+                  onPressed: (){
+                    CubitShop.get(context).postFavouriteModel(model!.id??1);
+                  },
+                  icon: CircleAvatar(
+                    backgroundColor : CubitShop.get(context).favourite == true? Colors.grey : defaultColor ,
+                    radius: 14,
+                    child: Icon(
+                      Icons.favorite_border,
+                      color: Colors.white,
+                      size: 16,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    ],
+  ),
+);
 
 
 

@@ -36,6 +36,7 @@ class ShopLogin extends StatelessWidget {
                    token = state.loginModel.data!.token;
 
                    CubitShop.get(context).getProfile();
+                   CubitShop.get(context).getFavourite();
 
                   showToast(
                     state: ToastColor.SUCCESS,

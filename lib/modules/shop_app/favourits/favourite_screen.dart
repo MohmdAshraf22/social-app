@@ -20,7 +20,7 @@ class FavouriteScreen extends StatelessWidget {
           condition: state is! ShopLoadingGetFavouriteModel,
           builder: (context) =>  ListView.separated(
             physics: BouncingScrollPhysics(),
-              itemBuilder: (context, index) => buildFav(CubitShop.get(context).favouriteModel!.data!.data![index],context),
+              itemBuilder: (context, index) => buildListProduct(CubitShop.get(context).favouriteModel!.data!.data![index].product,context),
               separatorBuilder: (context, index) => myDivider(),
               itemCount: CubitShop.get(context).favouriteModel!.data!.data!.length
           ),
@@ -30,96 +30,4 @@ class FavouriteScreen extends StatelessWidget {
     );
   }
 
-  Widget buildFav(FavData model,context) => Padding(
-    padding:  EdgeInsets.all(20.0),
-    child: Row(
-      children: [
-        Stack(
-          alignment: AlignmentDirectional.bottomStart,
-          children: [
-            Card(
-              elevation: 10,
-              child: Image(
-                image: NetworkImage('${model.product!.image}'),
-                height: 120,
-                width: 120,
-              ),
-            ),
-            if(model.product!.discount != 0)
-              Container(
-                width: 60,
-                color: Colors.red,
-                child: Text('DISCOUNT'
-                  ,style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-          ],
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('${model.product!.name}',
-                overflow: TextOverflow.ellipsis,
-                maxLines: 2,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              Row(
-                children: [
-                  Text('${model.product!.price}',
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                    style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.green
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  if(model.product!.discount != 0)
-                    Text('${model.product!.oldPrice}',
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black54,
-                        decoration: TextDecoration.lineThrough,
-                      ),
-                    ),
-                  Spacer(),
-                  IconButton(
-                    onPressed: (){
-                       CubitShop.get(context).postFavouriteModel(model.product!.id??1);
-                    },
-                    icon: CircleAvatar(
-                      backgroundColor : CubitShop.get(context).favourite == true? Colors.grey : defaultColor ,
-                      radius: 14,
-                      child: Icon(
-                        Icons.favorite_border,
-                        color: Colors.white,
-                        size: 16,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
 }

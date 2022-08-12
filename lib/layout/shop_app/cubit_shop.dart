@@ -10,6 +10,7 @@ import 'package:myapp/models/shop_app/get_fav_model.dart';
 import 'package:myapp/models/shop_app/get_fav_model.dart';
 import 'package:myapp/models/shop_app/home_model.dart';
 import 'package:myapp/models/shop_app/profile_model.dart';
+import 'package:myapp/models/shop_app/search_model.dart';
 import 'package:myapp/modules/shop_app/categories/categories_screen.dart';
 import 'package:myapp/modules/shop_app/favourits/favourite_screen.dart';
 import 'package:myapp/modules/shop_app/products/product_screen.dart';
@@ -43,7 +44,7 @@ class CubitShop extends Cubit<ShopStates> {
   Map<int, bool>? favourite = {};
   AddFavourites? addFavourites;
   GetFavouriteModel? favouriteModel;
-
+  Products? info;
   void getHomeData() {
     emit(ShopLadingHomeData());
     DioHelper.getData(
@@ -89,13 +90,15 @@ class CubitShop extends Cubit<ShopStates> {
 
       ).then((value) {
         addFavourites = AddFavourites.fromJson(value.data);
-        if(!addFavourites!.status){
+        if(!addFavourites!.status!){
           favourite![idFav] = !favourite![idFav]!;
         }
-        else getFavourite();
+        else
+          getFavourite();
+
         emit(ShopSuccessFavouritesModel(addFavourites));
       }).catchError((error) {
-        if(!addFavourites!.status ){
+        if(!addFavourites!.status!){
           favourite![idFav] = !favourite![idFav]!;
         }
         emit(ShopErrorFavouritesModel());
@@ -112,6 +115,7 @@ class CubitShop extends Cubit<ShopStates> {
       favouriteModel = GetFavouriteModel.fromJson(value.data);
       emit(ShopSuccessGetFavouriteModel());
     }).catchError((error) {
+      print(error.toString());
       emit(ShopErrorGetFavouriteModel());
     });
   }
@@ -158,6 +162,7 @@ class CubitShop extends Cubit<ShopStates> {
     });
   }
 
+
   bool ispass = true;
   IconData icon = Icons.visibility;
 
@@ -196,10 +201,12 @@ class CubitShop extends Cubit<ShopStates> {
 
   GetDetailsProduct? getDetailsProduct;
   Details? details;
+
   void DetailsProduct(){
     emit(ShopLoadingGetProductDetails());
     DioHelper.getData(
         path: PRODUCT_DETAILS,
+      token: token,
     ).then((value) {
       getDetailsProduct = GetDetailsProduct.fromJson(value.data);
       emit(ShopSuccessGetProductDetails());

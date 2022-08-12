@@ -47,6 +47,10 @@ class ErrorLoginState extends ShopStates{
   ErrorLoginState(this.error);
 }
 
+// class ShopSuccessGetSearchModel extends ShopStates{}
+// class ShopErrorGetSearchModel extends ShopStates{}
+// class ShopLoadingGetSearchModel extends ShopStates{}
+
 class ShopSuccessGetProductDetails extends ShopStates{}
 class ShopErrorGetProductDetails extends ShopStates{}
 class ShopLoadingGetProductDetails extends ShopStates{}

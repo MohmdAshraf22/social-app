@@ -19,8 +19,8 @@ class ProductScreen extends StatelessWidget {
       listener: (context, state) {
         if(state is ShopSuccessFavouritesModel)
           {
-            if(!state.model!.status){
-              showToast(text: state.model!.message, state: ToastColor.ERROR);
+            if(!state.model!.status!){
+              showToast(text: state.model!.message!, state: ToastColor.ERROR);
             }
           }
       },
@@ -216,7 +216,9 @@ class ProductScreen extends StatelessWidget {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 child: ElevatedButton.icon(
                     onPressed: (){
-                      navigateTo(context, DetailsScreen());
+                      CubitShop.get(context).info = model;
+                      navigateTo(context, DetailsScreen(
+                      ));
                     },
                     icon: Icon(Icons.add),
                     label: Text('Show Product'),

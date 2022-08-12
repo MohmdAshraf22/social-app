@@ -6,3 +6,4 @@ const PROFILE = 'profile';
 const REGISTER = 'register';
 const UPDATE = 'update-profile';
 const PRODUCT_DETAILS = 'products';
+const SEARCH = 'products/search';

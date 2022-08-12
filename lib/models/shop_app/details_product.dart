@@ -6,41 +6,43 @@ class GetDetailsProduct {
   GetDetailsProduct.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    data = json['data'] != null ?  Data.fromJson(json['data']) : null;
+    data = Data.fromJson(json['data']);
   }
 
 }
 
 class Data {
   int? currentPage;
-  List<Details>? data = [];
+  late List<Details> data = [];
 
   Data.fromJson(Map<String, dynamic> json) {
     currentPage = json['current_page'];
+
    json['data'].forEach((elements)
    {
-     data!.add(Details.fromJson(elements));
+     data.add(Details.fromJson(elements));
    });
     }
 }
 
 class Details {
-  int? id;
-  dynamic price;
-  dynamic oldPrice;
-  dynamic discount;
-  String? image;
-  String? name;
+  late int id;
+  late dynamic price;
+  late dynamic old_price;
+  late dynamic discount;
+  late List<String> images;
+  late String name;
+  late bool in_favorites;
+  late bool in_cart;
   String? description;
-
 
 
   Details.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     price = json['price'];
-    oldPrice = json['old_price'];
+    old_price = json['old_price'];
     discount = json['discount'];
-    image = json['image'];
+    images = json['images'].cast<String>();
     name = json['name'];
     description = json['description'];
   }
