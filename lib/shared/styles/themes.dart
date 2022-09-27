@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
-
-import 'colors.dart';
+import 'package:myapp/shared/styles/colors.dart';
 
 ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: HexColor('333739'),
@@ -23,7 +22,7 @@ ThemeData darkTheme = ThemeData(
       color: Colors.white,
     ),
   ),
-  primarySwatch:defaultColor,
+  //primarySwatch: defaultColor,
   textTheme: TextTheme(
     bodyText1: TextStyle(
       fontSize: 18,
@@ -34,16 +33,24 @@ ThemeData darkTheme = ThemeData(
   // fontFamily: 'Jannah',
 );
 ThemeData lightTheme = ThemeData(
-  primarySwatch: defaultColor,
-  scaffoldBackgroundColor: Colors.grey[300],
+  //    inputDecorationTheme: InputDecorationTheme(
+  //     focusedBorder: OutlineInputBorder(
+  //         borderRadius: BorderRadius.circular(30),
+  //         borderSide: BorderSide(
+  //         width: 3,
+  //         color: defaultColor
+  //       ),
+  //     )
+  // ) ,
+  scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(
     backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: Colors.grey[300],
+        statusBarColor: Colors.white,
         statusBarIconBrightness: Brightness.dark
     ),
     elevation: 0,
-    backgroundColor: Colors.grey[300],
+    backgroundColor: Colors.white,
     titleTextStyle: TextStyle(
       color: Colors.black,
       fontWeight: FontWeight.bold,
@@ -53,9 +60,6 @@ ThemeData lightTheme = ThemeData(
       color: Colors.black,
     ),
   ),
-  // floatingActionButtonTheme: FloatingActionButtonThemeData(
-  //   backgroundColor: Colors.orange,
-  // ),
   textTheme: TextTheme(
     bodyText1: TextStyle(
       fontSize: 18,

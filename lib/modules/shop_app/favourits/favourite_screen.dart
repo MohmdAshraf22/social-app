@@ -19,7 +19,7 @@ class FavouriteScreen extends StatelessWidget {
         return ConditionalBuilder(
           condition: state is! ShopLoadingGetFavouriteModel,
           builder: (context) =>  ListView.separated(
-            physics: BouncingScrollPhysics(),
+              physics: BouncingScrollPhysics(),
               itemBuilder: (context, index) => buildListProduct(CubitShop.get(context).favouriteModel!.data!.data![index].product,context),
               separatorBuilder: (context, index) => myDivider(),
               itemCount: CubitShop.get(context).favouriteModel!.data!.data!.length

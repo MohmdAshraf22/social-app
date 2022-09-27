@@ -1,6 +1,7 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:myapp/layout/shop_app/cubit_shop.dart';
 import 'package:myapp/models/shop_app/get_fav_model.dart';
 import 'package:myapp/modules/news_app/web_view/web_view.dart';
@@ -11,7 +12,8 @@ Widget defaultformfield({
   required TextEditingController controle ,
   TextInputType? type,
   bool obscure = false,
-  required String label,
+  String? label,
+  String? hint,
   required IconData prefix,
   IconData? suffix,
   VoidCallback? onpress,
@@ -19,11 +21,13 @@ Widget defaultformfield({
   GestureTapCallback? ontap,
   bool isClickable = true,
   ValueChanged<String>? onSubmit,
-  Color? cursorcolor,
   ValueChanged<String>? onChange,
+  Color? iconColor,
+  Color? textColor,
+
 }) => TextFormField(
   onFieldSubmitted: onSubmit,
-  cursorColor: cursorcolor,
+  cursorColor: defaultColor,
   enabled: isClickable,
   onTap: ontap,
 validator: validate,
@@ -31,12 +35,32 @@ controller: controle,
 keyboardType: type,
 obscureText: obscure ,
 decoration: InputDecoration(
+  hintStyle: TextStyle(
+    color: textColor
+  ),
+ labelStyle: TextStyle(
+    color: textColor,
+  ),
 border: OutlineInputBorder(
 borderRadius: BorderRadius.circular (30),
+  borderSide: BorderSide(
+      width: 3,
+      color: defaultColor
+  ),
+
 ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(30),
+    borderSide: BorderSide(
+        width: 3,
+        color: defaultColor
+    ),
+  ),
 labelText: label,
+hintText: hint,
 prefixIcon: Icon(
-prefix
+prefix,
+  color: iconColor ,
 ),
 suffixIcon:IconButton(
 icon : Icon(
@@ -49,6 +73,28 @@ onPressed: onpress,
   onChanged: onChange,
 );
 
+Widget defaultTextButton({
+  required VoidCallback onPress,
+  required String text,
+  Color? textColor,
+  Color? pressColor,
+  double? fontSize,
+}) => TextButton(
+    style: ButtonStyle(
+      overlayColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+          if (states.contains(MaterialState.pressed))
+            return pressColor; //<-- SEE HERE
+          return null; // Defer to the widget's default.
+        },
+      ),
+    ),
+    onPressed: onPress,
+    child: Text(text,
+      style: TextStyle(
+        color: textColor,
+        fontSize: fontSize
+      ),));
 
 Widget buildTaskItem(Map model, context) => Dismissible(
   key: Key(model['title']),
@@ -415,6 +461,8 @@ Widget buildListProduct(model,context,{bool? isOldPrice = true}) => Padding(
     ],
   ),
 );
+
+
 
 
 

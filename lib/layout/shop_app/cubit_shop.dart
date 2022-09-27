@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 import 'package:myapp/models/shop_app/details_product.dart';
 import 'package:myapp/models/shop_app/login_model.dart';
 import 'package:flutter/material.dart';
@@ -79,22 +81,23 @@ class CubitShop extends Cubit<ShopStates> {
   void postFavouriteModel(int idFav) {
     favourite![idFav] = !favourite![idFav]!;
     emit(ShopChangeFavouritesModel());
-
-
       DioHelper.postData(
         path: FAVOURITES,
         data: {
           'product_id': idFav
         },
         token: token,
-
-      ).then((value) {
+      ).then((value){
         addFavourites = AddFavourites.fromJson(value.data);
         if(!addFavourites!.status!){
           favourite![idFav] = !favourite![idFav]!;
+          print(0);
         }
-        else
+        else {
           getFavourite();
+          print(1);
+
+        }
 
         emit(ShopSuccessFavouritesModel(addFavourites));
       }).catchError((error) {

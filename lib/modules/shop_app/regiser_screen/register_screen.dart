@@ -197,15 +197,6 @@ class ShopRegister extends StatelessWidget {
                           ) ,
                           fallback:(context) => Center(child: CircularProgressIndicator()) ,
                         ),
-                        MaterialButton(
-                          onPressed: (){
-                          },
-                          child: Text('UPDATE',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17
-                            ),),
-                        ),
                       ],
                     ),
                   ),

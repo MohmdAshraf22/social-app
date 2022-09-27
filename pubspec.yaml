@@ -48,10 +48,29 @@ dependencies:
   fluttertoast: ^8.0.9
   convex_bottom_bar: ^3.0.0
   carousel_slider: ^4.1.1
+  salomon_bottom_bar: ^3.3.1
+  iconly: ^1.0.1
+  image_picker: ^0.8.5+3
+  video_player: ^2.4.7
+  timeago: ^3.3.0
+
+  #firebase
+  firebase_core: ^1.22.0
+  firebase_auth: ^3.8.0
+  cloud_firestore: ^3.4.7
+  firebase_storage: ^10.3.8
+  firebase_messaging: ^13.0.2
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  flutter_launcher_icons: ^0.10.0
+
+flutter_icons:
+  android: true
+  image_path: "assets/images/icon.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
