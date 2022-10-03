@@ -20,7 +20,6 @@ class CreatePost extends StatelessWidget {
       builder: (context, state) {
           var cubit = SocialCubit.get(context);
           var postImage = SocialCubit.get(context).postImage;
-          // var postVideo = SocialCubit.get(context).postVideo;
           // var videoPlayerController = SocialCubit.get(context).videoPlayerController;
         return Scaffold(
           appBar: AppBar(

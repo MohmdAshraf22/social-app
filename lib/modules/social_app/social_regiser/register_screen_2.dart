@@ -37,7 +37,7 @@ class RegisterScreen2 extends StatelessWidget {
                   if(profileImage != null)
                   Center(
                     child: CircleAvatar(
-                      radius: 132,
+                      radius: 133,
                       backgroundColor: HexColor('#FDF2E9'),
                       child: Stack(
                         alignment: Alignment.bottomRight,

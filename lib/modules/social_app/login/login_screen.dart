@@ -47,7 +47,7 @@ class SocialLoginScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
-                  colors: [
+                   colors: [
                     HexColor('#DC7633'),
                     HexColor('#D35400'),
                     HexColor('#A04000'),

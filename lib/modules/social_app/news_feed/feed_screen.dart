@@ -39,7 +39,7 @@ class FeedScreen extends StatelessWidget {
                     //       ),
                     //       child: Row(
                     //         crossAxisAlignment: CrossAxisAlignment.start,
-                    //         children: [
+                    //          children: [
                     //           Padding(
                     //             padding: const EdgeInsets.symmetric(
                     //                 vertical: 10

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/shared/styles/colors.dart';
-
 class SocialUserModel
 {
   String? name;

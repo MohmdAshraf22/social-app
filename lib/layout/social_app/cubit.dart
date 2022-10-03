@@ -470,7 +470,9 @@ class SocialCubit extends Cubit<SocialStates> {
         element.reference.collection('comments').get().then((value) {
           postModel.comments = value.docs.length;
         });
+
               posts.add(postModel);
+
               if(uId == postModel.uId) {
                 myPosts.add(postModel);
               }
@@ -618,7 +620,7 @@ class SocialCubit extends Cubit<SocialStates> {
       emit(SocialDeleteCommentErrorState());
     });
   }
-  
+
   void sendMessage({
   String? hisId,
   String? message,
@@ -833,5 +835,76 @@ class SocialCubit extends Cubit<SocialStates> {
       emit(SocialGetFollowersState());
     });
   }
+
+  List userFollower = [];
+  int userFollowers =0;
+  void getUserFollowers({
+  String? uId
+})
+  {
+   FirebaseFirestore.instance
+       .collection('users')
+       .doc(uId)
+       .collection('followers')
+       .get()
+       .then((value) {
+     userFollower.clear();
+     userFollowers = value.docs.length;
+     value.docs.forEach((element) {
+           FirebaseFirestore.instance
+               .collection('users')
+               .doc(element.id)
+               .get()
+               .then((value){
+                 userFollower.add(SocialUserModel.fromJson(value.data()!));
+           });
+         });
+         emit(SocialGetUserFollowersState());
+   });
+  }
+
+  List userFollowing = [];
+  int userFollowings =0;
+  void getUserFollowing({
+    String? uId,
+  })
+  {
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(uId)
+        .collection('following')
+        .get()
+        .then((value) {
+      userFollowing.clear();
+      userFollowings = value.docs.length;
+      value.docs.forEach((element) {
+        FirebaseFirestore.instance
+            .collection('users')
+            .doc(element.id)
+            .get()
+            .then((value){
+          userFollowing.add(SocialUserModel.fromJson(value.data()!));
+        });
+      });
+      emit(SocialGetUserFollowingState());
+    });
+  }
+  List userPosts = [];
+  void getUserPosts({
+    String? uId,
+  }) {
+      FirebaseFirestore.instance
+          .collection('posts')
+          .get()
+          .then((value) {
+        userPosts.clear();
+        value.docs.forEach((element) {
+          PostModel model = PostModel.fromJson(element.data());
+          if(model.uId == uId)
+          userPosts.add(model);
+        });
+        emit(SocialGetUserPostsState());
+      });
+    }
 }
 

@@ -80,7 +80,7 @@ class SocialRegister extends StatelessWidget {
                                color: Colors.white,
                              ),),
                          ],
-                       ),
+                        ),
                      ),
                    ),
                    Container(

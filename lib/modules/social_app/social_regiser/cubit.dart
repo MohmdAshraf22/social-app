@@ -9,7 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:myapp/models/social_app/user_model.dart';
 import 'package:myapp/modules/social_app/social_regiser/states.dart';
-import 'package:myapp/shared/components/constants.dart';
 
 
 class SocialCubitRegister extends Cubit<SocialRegisterStates>

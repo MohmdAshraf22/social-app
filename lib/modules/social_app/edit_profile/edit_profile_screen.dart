@@ -154,7 +154,7 @@ class EditProfileScreen extends StatelessWidget {
                         validate: (value){
                           if(value == null )
                           {
-                            return 'Bio must not be emtpy';
+                            return 'Bio must not be emtpy !';
                           }
                         }
                     ),

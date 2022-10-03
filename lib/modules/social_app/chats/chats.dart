@@ -89,7 +89,7 @@ class ChatsScreen extends StatelessWidget {
                                   decoration: InputDecoration(
                                       hintText: 'Message',
                                       hintStyle: Theme.of(context).textTheme.caption,
-                                      border: InputBorder.none
+                                       border: InputBorder.none
                                   ),
                                 ),
                               ),

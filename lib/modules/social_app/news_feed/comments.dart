@@ -66,6 +66,7 @@ class commentScreen extends StatelessWidget {
                                       style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 14),
                                     ),
                                     SizedBox(
+
                                       height: 3,
                                     ),
                                     Text('${SocialCubit.get(context).comments[index].text}',

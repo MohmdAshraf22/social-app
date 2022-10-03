@@ -2,6 +2,7 @@ class MessageModel
 {
   String? hisId;
   String? message;
+
   String? myId;
   String? dateTime;
 

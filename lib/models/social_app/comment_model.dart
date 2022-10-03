@@ -28,7 +28,7 @@ CommentModel.fromJson(Map<String, dynamic> json)
   Map<String,dynamic> toMap(){
     return {
       'name' : name,
-      'uId' : uId,
+       'uId' : uId,
       'text' : text,
       'profile' : profile,
       'dateTime' : dateTime,

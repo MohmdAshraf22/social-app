@@ -11,7 +11,6 @@ import 'package:myapp/models/social_app/user_model.dart';
 import 'package:myapp/modules/social_app/edit_profile/edit_profile_screen.dart';
 import 'package:myapp/modules/social_app/login/login_screen.dart';
 import 'package:myapp/modules/social_app/news_feed/comments.dart';
-import 'package:myapp/modules/social_app/seeting/my_posts.dart';
 import 'package:myapp/shared/components/components.dart';
 import 'package:myapp/shared/components/constants.dart';
 import 'package:myapp/shared/styles/colors.dart';
@@ -156,7 +155,9 @@ class SettingScreen extends StatelessWidget {
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) {
-                            return buildUsers(SocialCubit.get(context).Followers![index],context);
+                            if(SocialCubit.get(context).users[index].follow == true)
+                              return buildUsers(SocialCubit.get(context).Followers![index],context);
+                            return Container();
                           },
                           separatorBuilder: (context, index) => SizedBox(height: 10,),
                           itemCount: SocialCubit.get(context).Followers!.length,
@@ -177,7 +178,6 @@ class SettingScreen extends StatelessWidget {
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) {
                             print(index);
-                            if(SocialCubit.get(context).users[index].follow == true)
                             return buildUsers(SocialCubit.get(context).users[index],context);
                             return Container();
                           },
