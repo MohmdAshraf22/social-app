@@ -25,6 +25,7 @@ class SocialLayout extends StatelessWidget {
           navigateTo(context, CreatePost());
       },
       builder:(context, state) {
+
         var cubit = SocialCubit.get(context);
         return ConditionalBuilder(
             condition: SocialCubit.get(context).userModel != null,

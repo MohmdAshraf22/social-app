@@ -541,6 +541,7 @@ class SocialCubit extends Cubit<SocialStates> {
         .collection('comments')
         .add(commentModel.toMap())
         .then((value) {
+
       emit(SocialPostCommentSuccessState());
     }).catchError((error){
       print(error.toString());
