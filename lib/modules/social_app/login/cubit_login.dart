@@ -19,6 +19,7 @@ class SocialCubitLogin extends Cubit<SocialLoginStates>
       ispass = true;
       icon = Icons.visibility;
     }
+
     else {
       ispass = false;
       icon = Icons.visibility_off;

@@ -13,6 +13,7 @@ class MessageModel
     this.dateTime
   });
 
+
   MessageModel.fromJson(Map<String, dynamic> json)
   {
     hisId = json['hisId'];

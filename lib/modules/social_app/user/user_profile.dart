@@ -8,7 +8,6 @@ import 'package:myapp/layout/social_app/cubit.dart';
 import 'package:myapp/layout/social_app/states.dart';
 import 'package:myapp/models/social_app/post_model.dart';
 import 'package:myapp/models/social_app/user_model.dart';
-import 'package:myapp/modules/social_app/edit_profile/edit_profile_screen.dart';
 import 'package:myapp/modules/social_app/login/login_screen.dart';
 import 'package:myapp/modules/social_app/news_feed/comments.dart';
 import 'package:myapp/shared/components/components.dart';

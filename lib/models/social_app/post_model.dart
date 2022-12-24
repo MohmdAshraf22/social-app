@@ -24,6 +24,7 @@ class PostModel
     this.dateTime,
     this.like,
     this.likes,
+
     this.color,
     this.comment,
     this.comments

@@ -92,7 +92,6 @@ Widget defaultTextButton({
         fontSize: fontSize
       ),));
 
-
 Widget myDivider() => Padding(
   padding:  EdgeInsetsDirectional.only(
     start: 20,

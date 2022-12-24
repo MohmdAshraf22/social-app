@@ -44,6 +44,7 @@ class SocialLoginScreen extends StatelessWidget {
           return Scaffold(
             body: Container(
               width: double.infinity,
+
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,

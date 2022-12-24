@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/layout/social_app/cubit.dart';
 import 'package:myapp/layout/social_app/states.dart';
-import 'package:myapp/models/social_app/post_model.dart';
 import 'package:myapp/models/social_app/user_model.dart';
 import 'package:myapp/modules/social_app/user/user_profile.dart';
 import 'package:myapp/shared/components/components.dart';

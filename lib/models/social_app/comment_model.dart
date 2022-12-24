@@ -13,6 +13,7 @@ CommentModel({
     this.profile,
     this.text,
   this.dateTime,
+
   this.commentId,
   });
 

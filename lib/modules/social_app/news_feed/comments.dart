@@ -72,6 +72,7 @@ class commentScreen extends StatelessWidget {
                                     Text('${SocialCubit.get(context).comments[index].text}',
                                       style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
                                   ],
+
                                 ),
                               ),
                               Spacer(),

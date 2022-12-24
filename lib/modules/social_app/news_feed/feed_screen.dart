@@ -34,7 +34,6 @@ class FeedScreen extends StatelessWidget {
                     //     scrollDirection: Axis.horizontal,
                     //     physics: BouncingScrollPhysics(),
                     //     child: Padding(
-                    //       padding: const EdgeInsets.symmetric(
                     //         horizontal: 10,
                     //       ),
                     //       child: Row(

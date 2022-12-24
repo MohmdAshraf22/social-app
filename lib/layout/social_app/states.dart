@@ -31,6 +31,7 @@ class SocialVideoIsPlayState extends SocialStates {}
 class SocialVideoIsPauseState extends SocialStates {}
 
 
+
 class SocialGetPostsSuccessState extends SocialStates {}
 class SocialGetPostsErrorState extends SocialStates {}
 

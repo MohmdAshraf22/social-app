@@ -39,7 +39,6 @@ class SocialUserModel
     profile = json['profile'];
     // colorFollowButton = json['colorFollowButton'];
     // colorFollowText = json['colorFollowText'];
-    // textFollow = json['textFollow'];
   }
 
   Map<String,dynamic> toMap(){

@@ -41,7 +41,8 @@ class Chats extends StatelessWidget {
         child: Row(
           children: [
             CircleAvatar(
-              radius: 23,
+              radius: 23
+              ,
               backgroundColor: defaultColor,
               backgroundImage: NetworkImage('${usersModel.profile}',),
             ),

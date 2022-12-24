@@ -9,6 +9,7 @@ class CacheHelper {
     sharedPreferences = await SharedPreferences.getInstance();
   }
 
+
   static Future<bool> putData({
     required String key,
     required bool value,

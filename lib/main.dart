@@ -47,7 +47,6 @@ class MyApp extends StatelessWidget
     this.isDark,
     this.startWidget
 });
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

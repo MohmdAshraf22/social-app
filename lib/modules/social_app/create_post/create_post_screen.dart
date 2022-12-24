@@ -36,6 +36,7 @@ class CreatePost extends StatelessWidget {
                         dateTime: DateFormat.Hms().format(DateTime.now()),
                         text: textController.text,
                       );
+
                       cubit.removePostImage();
                     }, text: 'POST',
                     textColor: defaultColor,

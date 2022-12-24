@@ -40,6 +40,7 @@ class SocialCubitRegister extends Cubit<SocialRegisterStates>
 
     await ref.putFile(profileImage!);
     await ref.getDownloadURL().then((value) {
+
       profile = value ;
       print(profile);
       emit(SocialUploadProfileRegisterSuccessState());
