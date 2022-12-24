@@ -86,6 +86,7 @@ class SocialLoginScreen extends StatelessWidget {
                                 ),),
                             ],
                           ),
+
                         ),
                       ),
                       Container(

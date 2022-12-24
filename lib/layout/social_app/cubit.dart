@@ -44,6 +44,7 @@ class SocialCubit extends Cubit<SocialStates> {
     'My profile',
   ];
   List<Widget> screens =[
+
     FeedScreen(),
     Chats(),
     CreatePost(),

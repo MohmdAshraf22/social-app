@@ -19,6 +19,7 @@ class SocialCubitRegister extends Cubit<SocialRegisterStates>
   bool ispass = true;
   IconData icon = Icons.visibility;
 
+
   void changePass() {
     if (ispass == false) {
       ispass = true;

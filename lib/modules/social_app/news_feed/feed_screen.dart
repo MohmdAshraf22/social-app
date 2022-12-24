@@ -29,29 +29,7 @@ class FeedScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     // Card(
-                    //   elevation: 7,
-                    //   child: SingleChildScrollView(
-                    //     scrollDirection: Axis.horizontal,
-                    //     physics: BouncingScrollPhysics(),
-                    //     child: Padding(
-                    //         horizontal: 10,
-                    //       ),
-                    //       child: Row(
-                    //         crossAxisAlignment: CrossAxisAlignment.start,
-                    //          children: [
-                    //           Padding(
-                    //             padding: const EdgeInsets.symmetric(
-                    //                 vertical: 10
-                    //             ),
-                    //             child: Column(
-                    //               children: [
-                    //                 Stack(
-                    //                   alignment: AlignmentDirectional.bottomEnd,
-                    //                   children: [
-                    //                     CircleAvatar(
-                    //                       radius: 33,
-                    //                       backgroundColor: defaultColor,
-                    //                       child: CircleAvatar(
+
                     //                         radius: 30,
                     //                         backgroundColor: defaultColor,
                     //                         backgroundImage: NetworkImage('https://sm.ign.com/ign_pl/screenshot/default/hunter-x-hunter-01_nnbd.jpg',),

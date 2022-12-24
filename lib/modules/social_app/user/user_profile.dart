@@ -11,7 +11,6 @@ import 'package:myapp/models/social_app/user_model.dart';
 import 'package:myapp/modules/social_app/login/login_screen.dart';
 import 'package:myapp/modules/social_app/news_feed/comments.dart';
 import 'package:myapp/shared/components/components.dart';
-import 'package:myapp/shared/components/constants.dart';
 import 'package:myapp/shared/styles/colors.dart';
 
 class userProfile extends StatelessWidget {

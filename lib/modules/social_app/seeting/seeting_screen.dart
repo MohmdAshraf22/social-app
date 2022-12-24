@@ -149,6 +149,7 @@ class SettingScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: 15
                       ),
+
                       child: ConditionalBuilder(
                         condition: SocialCubit.get(context).followersId.isNotEmpty,
                         builder: (context) => ListView.separated(

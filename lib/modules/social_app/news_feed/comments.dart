@@ -51,6 +51,7 @@ class commentScreen extends StatelessWidget {
                               SizedBox(
                                 width: 7,
                               ),
+
                               Container(
                                 padding: EdgeInsets.all(6),
                                 decoration: BoxDecoration(

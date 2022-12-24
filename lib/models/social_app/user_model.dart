@@ -38,7 +38,6 @@ class SocialUserModel
     isEmailVerified = json['isEmailVerified'];
     profile = json['profile'];
     // colorFollowButton = json['colorFollowButton'];
-    // colorFollowText = json['colorFollowText'];
   }
 
   Map<String,dynamic> toMap(){

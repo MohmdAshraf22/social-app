@@ -12,5 +12,6 @@ class SocialErrorLoginState extends SocialLoginStates {
   late final String error;
 
   SocialErrorLoginState(this.error);
+
 }
 

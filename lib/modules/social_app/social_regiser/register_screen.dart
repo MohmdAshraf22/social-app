@@ -57,6 +57,7 @@ class SocialRegister extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+
                    Container(
                      height: 300,
                      child: Padding(

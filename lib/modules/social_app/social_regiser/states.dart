@@ -15,7 +15,6 @@ class SocialErrorRegisterState extends SocialRegisterStates {
 }
 
 
-// class SocialSuccessRegister2State extends SocialRegisterStates {}
 
 class SocialLoadingCreateUserState extends SocialRegisterStates {}
 class SocialSuccessCreateUserState extends SocialRegisterStates {

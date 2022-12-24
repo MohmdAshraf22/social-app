@@ -15,6 +15,7 @@ class SocialCubitLogin extends Cubit<SocialLoginStates>
 
 
   void changePass() {
+
     if (ispass == false) {
       ispass = true;
       icon = Icons.visibility;

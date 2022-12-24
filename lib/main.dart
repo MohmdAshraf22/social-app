@@ -13,7 +13,6 @@ import 'shared/bloc_observer.dart';
 import 'shared/components/constants.dart';
 
 void main() async{
-
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await CacheHelper.init();

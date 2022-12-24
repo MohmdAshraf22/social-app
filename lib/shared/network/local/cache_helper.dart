@@ -17,6 +17,7 @@ class CacheHelper {
     return await sharedPreferences.setBool(key, value);
   }
 
+
   static Future<bool> saveData({
     required String key,
     required dynamic value,

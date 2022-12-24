@@ -27,6 +27,7 @@ class RegisterScreen2 extends StatelessWidget {
       builder: (context, state) {
         var profileImage =SocialCubitRegister.get(context).profileImage;
 
+
         return  Scaffold(
           appBar: AppBar(),
           body: SingleChildScrollView(

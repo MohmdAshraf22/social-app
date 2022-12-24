@@ -77,8 +77,7 @@ class ChatsScreen extends StatelessWidget {
                                   color: HexColor('#D5D8DC'),
                                 ),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
+                              child: Padding(padding: const EdgeInsets.symmetric(
                                     horizontal: 8
                                 ),
                                 child: TextField(

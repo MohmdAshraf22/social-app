@@ -36,6 +36,7 @@ class Chats extends StatelessWidget {
       onTap: (){
         navigateTo(context, ChatsScreen(usersModel));
       },
+
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Row(
